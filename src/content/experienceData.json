@@ -1,0 +1,104 @@
+[
+  {
+    "position": "Software Engineer – Backend",
+    "company": {
+      "short": "Europcar",
+      "name": "Europcar International (Paris, France)",
+      "url": "https://www.europcar.com/"
+    },
+    "time": "August 2022 – Present",
+    "description": "Europcar is a leading company in the European car rental industry.",
+    "items": [
+      "Design and develop new microservices for Europcar’s B2B, B2C channel using Java/Kotlin, Spring Boot and hosted on AWS based on hexagonal architecture and domain driven design practices.",
+      "Implemented individual customers login functionality with Keycloak/Redhat SSO using OpenID Connect and OAuth2.0.",
+      "Implemented modern Gradle JVM build practices, streamlining the development process, reducing build times, and ultimately improving the project's scalability. Added caching mechanism in Gradle build to improve build performance in Gitlab CI/CD pipeline.",
+      "Tuning database queries and indexing strategies for PostgreSQL and Elasticsearch to reduce retrieval time.",
+      "Development of APIs using API first approach via Swagger and OpenAPI generators and add new features using behavior driven development practices with Java and cucumber."
+    ],
+    "leveragedKnowledgeIn": [
+      "Java",
+      "Kotlin",
+      "Spring Boot",
+      "Kafka",
+      "PostgreSQL",
+      "Keycloak",
+      "Gradle",
+      "Docker",
+      "Kubernetes",
+      "Terraform"
+    ]
+  },
+  {
+    "position": "Software Engineer – P.II",
+    "company": {
+      "short": "Dassault",
+      "name": "Dassault Systèmes (Paris, France)",
+      "url": "https://www.3ds.com/"
+    },
+    "time": "March 2022 – July 2022",
+    "description": "Dassault Systèmes is a French software company specializing in 3D design, 3D digital mock-up, and product lifecycle management (PLM) software.",
+    "items": [
+      "Developed a data quality analysis tool to identify and address critical data quality issues for global online sales and referential systems. Initially used Python, SQL, and proprietary Dassault tools to develop this feature.",
+      "Collaborated with cross-functional and business analyst teams to gather requirements and later converted the tool into a Java service, resulting in improved business processes and significantly reduced deployment time."
+    ],
+    "leveragedKnowledgeIn": [
+      "Java",
+      "Python",
+      "SQL",
+      "Spring Boot",
+      "Oracle 8"
+    ]
+  },
+  {
+    "position": "Software Consultant",
+    "company": {
+      "short": "Lunatech",
+      "name": "Lunatech SAS (Paris, France)",
+      "url": "https://www.lunatech.com/"
+    },
+    "time": "August 2016 – December 2021",
+    "description": "Lunatech is a consulting company providing software development and IT services.",
+    "items": [
+      "Full Stack (Remote) for client: Audi AG (Ingolstadt, Germany).",
+      "Developed an in-house ground truth labeling system for video data collected from vehicles, as an integral component of autonomous driving initiatives.",
+      "Refactored and introduced an enhanced backend architecture, incorporating best practices in Akka-http API development.",
+      "Developed frontend features from scratch, utilizing React with ScalaJS and seamlessly integrating it with the labeling backend.",
+      "Implemented role-based access management for resources using Forgerock IAM.",
+      "Facilitated the deployment of the labeling system on a cloud platform, optimizing scalability and resource management."
+    ],
+    "leveragedKnowledgeIn": [
+      "Scala",
+      "ScalaJS",
+      "React",
+      "Akka-Http",
+      "Kafka",
+      "Elasticsearch",
+      "Elastic4s",
+      "Argo Workflow",
+      "Docker",
+      "Kubernetes",
+      "GCP"
+    ]
+  },
+  {
+    "position": "Software Developer Internship",
+    "company": {
+      "short": "Nokia Bell Labs",
+      "name": "Nokia Bell Labs (Formerly Alcatel Lucent) (Paris, France)",
+      "url": "https://www.bell-labs.com/"
+    },
+    "time": "July 2014 – December 2014",
+    "description": "Nokia Bell Labs is an industrial research and scientific development company.",
+    "items": [
+      "Developed a tool using ITU's P.1201.1 algorithm for advanced video quality estimation and analyzed streaming protocols through packet capture with Wireshark and Tcpdump to enhance mobile device video quality.",
+      "Study of QUIC/HTTP-2.0 protocol, H.264 video encoding/decoding format and research to improve media transfer quality over net."
+    ],
+    "leveragedKnowledgeIn": [
+      "C",
+      "C#",
+      "Java",
+      "Wireshark",
+      "Tcpdump"
+    ]
+  }
+]
