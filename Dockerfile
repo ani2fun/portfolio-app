@@ -38,8 +38,8 @@ RUN yarn install --frozen-lockfile --production
 EXPOSE 3000
 
 # Set a non-root user for security purposes
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-USER appuser
+RUN addgroup -S nodeuser && adduser -S nodeuser -G nodeuser
+USER nodeuser
 
 # Start the Next.js application
 CMD ["yarn", "start"]

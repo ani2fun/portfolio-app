@@ -14,9 +14,11 @@ const Hero = () => {
           </span>
                 </h1>
                 <p className="text-lg md:text-3xl mt-2 md:mt-8 text-gray-700 dark:text-gray-300 max-w-4xl mx-auto">
-                    I&apos;m a <span className="font-bold text-blue-600 dark:text-blue-400">Software Engineer (B.E., M.S)</span> and <span
-                    className="font-bold text-blue-600 dark:text-blue-400">Full-Stack Engineer</span> focused on
-                    developing clean, intuitive, and rapid experiences.
+                        <span>I&apos;m a </span>
+                        <span className="font-bold text-blue-600 dark:text-blue-400">Software Engineer </span>
+                        <span className="font-semibold text-2xl text-blue-600 dark:text-blue-400">(B.E, M.S - Full Stack Engineer).</span>
+                        <br/>
+                        <span className={`text-2xl`}>Turning ideas into clean, practical, and rapid software experiences.</span>
                 </p>
                 <div className="mt-8 flex flex-col md:flex-row justify-center gap-4">
                     <Link href="mailto:aniket.kakde.work@gmail.com?subject=Hi! | kakde.eu"
