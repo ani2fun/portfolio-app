@@ -22,7 +22,7 @@ const Hero = () => {
                         className={`text-2xl`}>Turning ideas into clean, practical, and rapid software experiences.</span>
                 </p>
                 <div className="mt-8 flex flex-col md:flex-row justify-center gap-4">
-                    <Link href="mailto:aniket.kakde.work@gmail.com?subject=Hi! | kakde.eu"
+                    <Link href="mailto:a.r.kakde@gmail.com?subject=Hi, Aniket"
                           className="font-semibold border-2 border-blue-600 dark:bg-gray-100 dark:hover:bg-gray-900 text-blue-900 hover:text-gray-50 hover:bg-sky-400 py-2 px-6 rounded-md transition duration-300">
                         Contact Me
                     </Link>
