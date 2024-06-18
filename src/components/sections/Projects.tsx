@@ -28,10 +28,14 @@ const Projects = () => {
                             <h3 className="pt-10 text-xl font-semibold text-blue-700">{project.name}</h3>
                             <p className="text-gray-600 mt-2">{project.description}</p>
                             <div className="flex mt-4">
-
                                 <Link href={project.projectUrl} rel="noopener noreferrer"
                                       target="_blank"
-                                      className="hover:scale-125 mx-2 text-gray-700 dark:text-black hover:text-blue-600 dark:hover:text-blue-600 transition-transform duration-100">
+                                      className={`hover:scale-125 mx-2 
+                                      text-gray-700 dark:text-black 
+                                      hover:text-blue-600 dark:hover:text-blue-600 
+                                      transition-transform duration-100
+                                      ${project.projectUrl === "https://order-food.kakde.eu/" ? "hidden" : ""}
+                                      `}>
                                     <svg role="img" viewBox="0 0 24 24" className="custom-icon w-8 h-8"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <title>LinkedIn</title>

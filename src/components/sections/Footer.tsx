@@ -5,7 +5,7 @@ import ToggleMode from "@/components/ToggleMode";
 
 const Footer = () => {
     return (
-        <footer className="container sticky top-[100vh] md:p-20 p-5 rounded-lg shadow-md">
+        <footer className="container sticky top-[100vh] md:p-12 p-5 rounded-lg shadow-md">
             <div className="flex flex-auto place-content-between pt-5">
                 <div
                     className="items-center max-md:hidden text-xl font-semibold">Made with
