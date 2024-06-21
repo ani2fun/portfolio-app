@@ -40,8 +40,7 @@ const About = () => {
                             <Image
                                 src="/img/portfolio/image1.jpg"
                                 alt="Image 1"
-                                width="100"
-                                height="100"
+                                layout="fill"
                                 className="w-full h-full object-cover rounded-lg"
                             />
                             <div className="inset-0 bg-blue-200 dark:bg-blue-600 opacity-50 rounded-lg"></div>
@@ -50,8 +49,7 @@ const About = () => {
                             <Image
                                 src="/img/portfolio/image2.jpg"
                                 alt="Image 2"
-                                width="100"
-                                height="100"
+                                layout="fill"
                                 className="w-full h-full object-cover rounded-lg"
                             />
                             <div className="inset-0 bg-blue-200 dark:bg-blue-600 opacity-50 rounded-lg"></div>
@@ -60,8 +58,7 @@ const About = () => {
                             <Image
                                 src="/img/portfolio/image3.jpg"
                                 alt="Image 3"
-                                width="100"
-                                height="100"
+                                layout="fill"
                                 className="w-full h-full object-cover rounded-lg"
                             />
                             <div className="inset-0 bg-blue-200 dark:bg-blue-600 opacity-50 rounded-lg"></div>
@@ -70,8 +67,8 @@ const About = () => {
                             <Image
                                 src="/img/portfolio/image4.jpg"
                                 alt="Image 4"
-                                width="100"
-                                height="100"
+                                width="200"
+                                height="200"
                                 className="w-full h-full object-cover rounded-lg"
                             />
                             <div className="inset-0 bg-blue-200 dark:bg-blue-600 opacity-50 rounded-lg"></div>

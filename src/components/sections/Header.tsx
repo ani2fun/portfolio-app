@@ -2,21 +2,21 @@
 
 import Link from "next/link";
 import ToggleMode from "@/components/ToggleMode";
-import {useState} from "react";
+import { useState } from "react";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
     const menuLinks = [
-        {href: "#about", label: "About"},
-        {href: "#experience", label: "Experience"},
-        {href: "#projects", label: "Projects"},
+        { href: "#about", label: "About" },
+        { href: "#experience", label: "Experience" },
+        { href: "#projects", label: "Projects" },
         // { href: "/blogs", label: "Blogs" },
     ];
 
     const renderMenu = () => (
-        <ul className="flex flex-col items-center space-y-5 bg-white dark:bg-background p-5"> {/* Added padding for better visibility */}
+        <ul className="flex flex-col items-left space-y-5 bg-white dark:bg-background p-5"> {/* Added padding for better visibility */}
             {menuLinks.map((link) => (
                 <li key={link.href}>
                     <Link href={link.href} className="font-semibold hover:text-primary dark:hover:text-primary"
@@ -29,12 +29,18 @@ const Header = () => {
     );
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-950 shadow-md">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-background shadow-md opacity-95">
             {/* Navigation */}
             <nav className="container mx-auto p-5 flex justify-between items-center">
-                <div className="text-3xl font-bold text-primary dark:text-primary">
+                {/* Name */}
+                <div className="hidden md:block text-lg md:text-3xl font-bold text-primary dark:text-primary">
                     Aniket Kakde
                 </div>
+                {/* ToggleMode for small screens */}
+                <div className="block md:hidden">
+                    <ToggleMode />
+                </div>
+                {/* Menu Links for large screens */}
                 <div className="hidden md:flex space-x-5">
                     {menuLinks.map((link) => (
                         <Link key={link.href} href={link.href}
@@ -43,9 +49,11 @@ const Header = () => {
                         </Link>
                     ))}
                 </div>
+                {/* ToggleMode for large screens */}
                 <div className="hidden md:flex">
-                    <ToggleMode/>
+                    <ToggleMode />
                 </div>
+                {/* Menu button for small screens */}
                 <button className="md:hidden" onClick={toggleMenu}>
                     {menuOpen ? (
                         <svg className="w-10 h-10 text-primary dark:text-primary hover:text-rose-500"

@@ -7,19 +7,19 @@ const Hero = () => {
         <section id="hero"
                  className="min-h-screen flex items-center justify-center px-8 rounded-lg shadow-md">
             <div className="text-center">
-                <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-gray-100 relative mb-6">
+                <h1 className="text-lg md:text-4xl font-semibold text-gray-900 dark:text-gray-100 relative mb-6">
                     Hi! My name is
-                    <span className="block text-5xl md:text-6xl font-bold mt-3 text-blue-700 dark:text-blue-700">
+                    <span className="block text-3xl md:text-6xl font-bold mt-3 text-blue-700 dark:text-blue-700">
             Aniket Kakde
           </span>
                 </h1>
                 <p className="text-lg md:text-3xl mt-2 md:mt-8 text-gray-700 dark:text-gray-300 max-w-4xl mx-auto">
                     <span>I&apos;m a </span>
-                    <span className="font-bold text-blue-600 dark:text-blue-400">Software Engineer </span>
-                    <span className="font-semibold text-2xl text-blue-600 dark:text-blue-400">(Full Stack).</span>
+                    <span className="font-bold text-lg md:text-3xl text-blue-600 dark:text-blue-400">Software Engineer </span>
+                    <span className="font-semibold text-lg md:text-2xl text-blue-600 dark:text-blue-400">(Full Stack).</span>
                     <br/>
                     <span
-                        className={`text-2xl`}>Turning ideas into clean, practical, and rapid software experiences.</span>
+                        className={`text-sm md:text-2xl`}>Turning ideas into clean, practical, and rapid software experiences.</span>
                 </p>
                 <div className="mt-8 flex flex-col md:flex-row justify-center gap-4">
                     <Link href="mailto:a.r.kakde@gmail.com?subject=Hi, Aniket"
