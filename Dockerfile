@@ -1,45 +1,64 @@
-# Stage 1: Build the Next.js application
+# Stage 1: Dependency Installation
+FROM node:20-alpine AS deps
+
+# Install compatibility package for libc6, required by some dependencies
+RUN apk add --no-cache libc6-compat
+
+# Set the working directory for subsequent commands to /app
+WORKDIR /app
+
+# Copy lock files to the working directory to ensure consistent dependencies
+COPY yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+
+# Install dependencies using yarn with a mounted cache to speed up the process
+RUN --mount=type=cache,target=/root/.yarn YARN_CACHE_FOLDER=/root/.yarn yarn install --frozen-lockfile
+
+# Stage 2: Build Application
 FROM node:20-alpine AS builder
 
-# Set the working directory
+# Set the working directory for subsequent commands to /app
 WORKDIR /app
 
-# Copy package.json and yarn.lock
-COPY package.json yarn.lock ./
+# Copy the installed node_modules from the deps stage to the current working directory
+COPY --from=deps /app/node_modules ./node_modules
 
-# Install dependencies using Yarn
-RUN yarn install --frozen-lockfile
-
-# Copy the rest of the application code
+# Copy the entire source code to the working directory
 COPY . .
 
-# Build the application
+# Build the application using yarn
 RUN yarn build
 
-# Stage 2: Serve the application using a minimal image
+# Stage 3: Create Runtime Image
 FROM node:20-alpine AS runner
 
-# Set the NODE_ENV to production
-ENV NODE_ENV=production
-
-# Set the working directory
+# Set the working directory for subsequent commands to /app
 WORKDIR /app
 
-# Copy the built application from the builder stage
-COPY --from=builder /app/.next ./.next
+# Set the environment variable NODE_ENV to production
+ENV NODE_ENV=production
+
+# Create a system group with gid 1001 named nodejs
+RUN addgroup --system --gid 1001 nodejs
+
+# Create a system user with uid 1001 named nextjs and add it to the nodejs group
+RUN adduser --system --uid 1001 nextjs
+
+# Copy the public directory from the builder stage to the current working directory
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/yarn.lock ./
 
-# Install only production dependencies using Yarn
-RUN yarn install --frozen-lockfile --production
+# Copy the built application files from the builder stage to the current working directory
+# and set the ownership to the nextjs user and nodejs group
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Expose the port the app runs on
+# Switch to the nextjs user for running the application
+USER nextjs
+
+# Expose port 3000 for the application
 EXPOSE 3000
 
-# Set a non-root user for security purposes
-RUN addgroup -S nodeuser && adduser -S nodeuser -G nodeuser
-USER nodeuser
+# Set the environment variable PORT to 3000
+ENV PORT=3000
 
-# Start the Next.js application
-CMD ["yarn", "start"]
+# Command to run the application
+CMD ["node", "server.js"]
