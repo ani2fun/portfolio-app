@@ -26,7 +26,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Ensure next is in PATH and available
-RUN ls -la node_modules/.bin && ls -la node_modules/next && yarn build
+RUN yarn install
+RUN yarn build
 
 # Stage 3: Create Runtime Image
 FROM node:20-alpine AS runner
