@@ -61,12 +61,14 @@ jobs:
         with:
           context: ./
           platforms: linux/amd64,linux/arm64
-          push: true
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
             ani2fun/portfolio-app:latest
             ani2fun/portfolio-app:${{ github.sha }}
             ghcr.io/ani2fun/portfolio-app:latest
             ghcr.io/ani2fun/portfolio-app:${{ github.sha }}
+
 
       - name: Image digest
         run: echo ${{ steps.buildx.outputs.digest }}
@@ -85,10 +87,9 @@ jobs:
         run: |
           git config --global user.email "${{ secrets.USER_EMAIL }}"
           git config --global user.name "${{ secrets.USER_NAME }}"
-
-      - name: Update deployment manifest
-        run: |
-          sed -i "s#image: ani2fun/portfolio-app:.*#image: ani2fun/portfolio-app:${{ github.sha }}#g" valhalla/portfolio-app.yaml
-          git add valhalla/portfolio-app.yaml
-          git commit -m "Update image for - ${{ github.sha }}"
-          git push origin main
+          echo ${{ github.sha }}
+          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/portfolio-app:${{ github.sha }}#g" valhalla/portfolio-app.yaml
+          git add -A
+          git commit -am "Update image for - ${{ github.sha }}"
+      - run: echo ${{ github }}
+      - run: git push origin main
