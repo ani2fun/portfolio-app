@@ -1,6 +1,7 @@
 import React from "react";
 import projectsData from "../../content/projectsData.json";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectItem {
     name: string;
@@ -23,7 +24,12 @@ const Projects = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {items.map((project, index) => (
                     <div key={index} className="relative dark:bg-slate-300 rounded-lg shadow-md overflow-hidden">
-                        <img src={project.image.url} alt={project.image.alt} className="w-full h-1/3 object-cover"/>
+                        <Image src={project.image.url}
+                               alt={project.image.alt}
+                               width="200"
+                               height="200"
+                               className="w-full h-1/3 object-cover"
+                        />
                         <div className="p-6">
                             <h3 className="pt-10 text-xl font-semibold text-blue-700">{project.name}</h3>
                             <p className="text-gray-600 mt-2">{project.description}</p>
