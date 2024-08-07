@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -20,8 +21,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - name: Yarn Install
+        run: yarn install --frozen-lockfile
+
+      - name: Yarn Build
+        run: yarn build
+
 
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
@@ -83,7 +88,7 @@ jobs:
 
       - name: Update deployment manifest
         run: |
-          sed -i "s#image: ani2fun/portfolio-app:.*#image: ani2fun/portfolio-app:${{ github.sha }}#g" deployments/portfolio-app.yaml
-          git add deployments/portfolio-app.yaml
+          sed -i "s#image: ani2fun/portfolio-app:.*#image: ani2fun/portfolio-app:${{ github.sha }}#g" valhalla/portfolio-app.yaml
+          git add valhalla/portfolio-app.yaml
           git commit -m "Update image for - ${{ github.sha }}"
           git push origin main
