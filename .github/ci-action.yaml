@@ -1,0 +1,90 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.14.0]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn build --if-present
+
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+  build-and-push-docker-image:
+    name: Build Docker image and push to repositories
+    runs-on: ubuntu-latest
+    needs: [ 'build']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PAT }} # Using Personal Access Token (PAT)
+
+      - name: Login to GitHub Packages
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.G_TOKEN }}
+
+      - name: Build image and push to Docker Hub and GitHub Container Registry
+        uses: docker/build-push-action@v5
+        with:
+          context: ./
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ani2fun/portfolio-app:latest
+            ani2fun/portfolio-app:${{ github.sha }} 
+            ghcr.io/ani2fun/portfolio-app:latest
+            ghcr.io/ani2fun/portfolio-app:${{ github.sha }}
+
+      - name: Image digest
+        run: echo ${{ steps.buildx.outputs.digest }}
+
+  update-manifest-stage:
+    runs-on: ubuntu-latest
+    needs: [ 'build-and-push-docker-image' ]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ani2fun/infra
+          ref: 'main'
+          token: ${{ secrets.G_TOKEN }}
+
+      - name: Setup git config
+        run: |
+          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          git config --global user.name "${{ secrets.USER_NAME }}"
+
+      - name: Update deployment manifest
+        run: |
+          sed -i "s#image: ani2fun/portfolio-app:.*#image: ani2fun/portfolio-app:${{ github.sha }}#g" deployments/portfolio-app.yaml
+          git add deployments/portfolio-app.yaml
+          git commit -m "Update image for - ${{ github.sha }}"
+          git push origin main
