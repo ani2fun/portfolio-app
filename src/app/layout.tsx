@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: "https://kakde.eu",
         images: [
             {
-                url: "https://kakde.eu/images/og-image.jpg",
+                url: "/img/portfolio/favicon.png",
                 width: 800,
                 height: 600,
                 alt: "Aniket Kakde Portfolio"
