@@ -1,19 +1,19 @@
 [
   {
-    "name": "Sonatype Central Publishing Plugin in Gradle",
+    "name": "Note Book - Simple Note Application for personal knowledge base",
     "tags": [
-      "Kotlin",
-      "Gradle",
-      "Sonatype",
-      "Maven Central"
+      "markdown",
+      "mdbook",
+      "cargo",
+      "rust"
     ],
-    "projectUrl": "https://central.sonatype.org/publish/publish-portal-gradle/",
-    "githubUrl": "https://github.com/ani2fun/sonatype-maven-central-publisher.git",
+    "projectUrl": "https://notebook.kakde.eu",
+    "githubUrl": "https://github.com/ani2fun/note-book.git",
     "image": {
-      "url": "/img/other/gradle-plugin.png",
+      "url": "/img/other/macbook.jpg",
       "alt": "Gradle Plugin."
     },
-    "description": "The Maven Central Publisher Plugin is a Gradle plugin designed to streamline the process of publishing artifacts to Maven Central repository. Demo projects for publishing using this plugin: https://github.com/ani2fun/plugin-demo"
+    "description": "My personal knowledge base — a collection of guides, notes, and tutorials across a range of technical topics. This includes detailed documentation on setting up infrastructure, Kubernetes clusters, VPNs, and more, as well as key concepts in Computer Science, such as algorithms, system design, and data structures."
   },
   {
     "name": "Portfolio Website using React & NextJS",
@@ -33,6 +33,22 @@
       "alt": "Food Ordering Application."
     },
     "description": "Simple Portfolio website using React and NextJS. Responsive Design."
+  },
+  {
+    "name": "Sonatype Central Publishing Plugin in Gradle",
+    "tags": [
+      "Kotlin",
+      "Gradle",
+      "Sonatype",
+      "Maven Central"
+    ],
+    "projectUrl": "https://central.sonatype.org/publish/publish-portal-gradle/",
+    "githubUrl": "https://github.com/ani2fun/sonatype-maven-central-publisher.git",
+    "image": {
+      "url": "/img/other/gradle-plugin.png",
+      "alt": "Gradle Plugin."
+    },
+    "description": "The Maven Central Publisher Plugin is a Gradle plugin designed to streamline the process of publishing artifacts to Maven Central repository. Demo projects for publishing using this plugin: https://github.com/ani2fun/plugin-demo"
   },
   {
     "name": "Food Ordering System - Hexagonal Architecture, DDD",
