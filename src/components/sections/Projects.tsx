@@ -31,8 +31,6 @@ const Projects = () => {
                                className="w-full h-1/3 object-cover"
                         />
                         <div className="p-6">
-                            <h3 className="pt-10 text-xl font-semibold text-blue-700">{project.name}</h3>
-                            <p className="text-gray-600 mt-2">{project.description}</p>
                             <div className="flex mt-4">
                                 <Link href={project.projectUrl} rel="noopener noreferrer"
                                       target="_blank"
@@ -44,7 +42,7 @@ const Projects = () => {
                                       `}>
                                     <svg role="img" viewBox="0 0 24 24" className="custom-icon w-8 h-8"
                                          xmlns="http://www.w3.org/2000/svg">
-                                        <title>LinkedIn</title>
+                                        <title>{project.projectUrl}</title>
                                         <path fill="currentColor"
                                               d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
                                     </svg>
@@ -60,6 +58,8 @@ const Projects = () => {
                                 </Link>
 
                             </div>
+                            <h3 className="pt-10 text-xl font-semibold text-blue-700">{project.name}</h3>
+                            <p className="text-gray-600 mt-2">{project.description}</p>
                         </div>
                     </div>
                 ))}
