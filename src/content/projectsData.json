@@ -10,7 +10,7 @@
     "projectUrl": "https://notebook.kakde.eu",
     "githubUrl": "https://github.com/ani2fun/note-book.git",
     "image": {
-      "url": "/img/other/macbook.jpg",
+      "url": "/img/other/macbook.webp",
       "alt": "Gradle Plugin."
     },
     "description": "My personal knowledge base — a collection of guides, notes, and tutorials across a range of technical topics. This includes detailed documentation on setting up infrastructure, Kubernetes clusters, VPNs, and more, as well as key concepts in Computer Science, such as algorithms, system design, and data structures."
@@ -29,7 +29,7 @@
     "projectUrl": "https://www.kakde.eu/",
     "githubUrl": "https://github.com/ani2fun/portfolio-app.git",
     "image": {
-      "url": "/img/other/portfolio-webapp.png",
+      "url": "/img/other/portfolio-webapp.webp",
       "alt": "Food Ordering Application."
     },
     "description": "Simple Portfolio website using React and NextJS. Responsive Design."
@@ -45,7 +45,7 @@
     "projectUrl": "https://central.sonatype.org/publish/publish-portal-gradle/",
     "githubUrl": "https://github.com/ani2fun/sonatype-maven-central-publisher.git",
     "image": {
-      "url": "/img/other/gradle-plugin.png",
+      "url": "/img/other/gradle-plugin.webp",
       "alt": "Gradle Plugin."
     },
     "description": "The Maven Central Publisher Plugin is a Gradle plugin designed to streamline the process of publishing artifacts to Maven Central repository. Demo projects for publishing using this plugin: https://github.com/ani2fun/plugin-demo"
@@ -68,7 +68,7 @@
     "projectUrl": "https://order-food.kakde.eu/",
     "githubUrl": "https://github.com/ani2fun/food-ordering-system.git",
     "image": {
-      "url": "/img/food-ordering-system/system-1.jpg",
+      "url": "/img/food-ordering-system/system-1.webp",
       "alt": "Food Ordering Application."
     },
     "description": "[Web App](https://order-food.kakde.eu/) An E-Commerce prototype for food ordering system using hexagonal architecture and domain driven design practices."

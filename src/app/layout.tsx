@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: "https://kakde.eu",
         images: [
             {
-                url: "/img/portfolio/favicon.png",
+                url: "/img/portfolio/favicon.webp",
                 width: 800,
                 height: 600,
                 alt: "Aniket Kakde Portfolio"
@@ -34,7 +34,7 @@ export default function RootLayout({
         <html lang="en">
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <link rel="icon" href="/img/portfolio/favicon.png"/>
+            <link rel="icon" href="/img/portfolio/favicon.webp"/>
         </head>
         <body className={inter.className}>
         <ThemeProvider

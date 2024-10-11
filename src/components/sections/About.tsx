@@ -38,7 +38,7 @@ const About = () => {
                     <div className="grid grid-cols-8 grid-rows-8 gap-2">
                         <div className="row-start-2 row-span-3 col-start-2 col-span-3 relative">
                             <Image
-                                src="/img/portfolio/image1.jpg"
+                                src="/img/portfolio/image1.webp"
                                 alt="Image 1"
                                 layout="fill"
                                 className="w-full h-full object-cover rounded-lg"
@@ -47,7 +47,7 @@ const About = () => {
                         </div>
                         <div className="row-start-5 row-span-4 col-span-4 relative">
                             <Image
-                                src="/img/portfolio/image2.jpg"
+                                src="/img/portfolio/image2.webp"
                                 alt="Image 2"
                                 layout="fill"
                                 className="w-full h-full object-cover rounded-lg"
@@ -56,7 +56,7 @@ const About = () => {
                         </div>
                         <div className="row-start-1 row-span-5 col-start-5 col-span-3 relative">
                             <Image
-                                src="/img/portfolio/image3.jpg"
+                                src="/img/portfolio/image3.webp"
                                 alt="Image 3"
                                 layout="fill"
                                 className="w-full h-full object-cover rounded-lg"
@@ -65,7 +65,7 @@ const About = () => {
                         </div>
                         <div className="row-start-6 row-span-2 col-start-5 col-span-2 relative">
                             <Image
-                                src="/img/portfolio/image4.jpg"
+                                src="/img/portfolio/image4.webp"
                                 alt="Image 4"
                                 width="200"
                                 height="200"
